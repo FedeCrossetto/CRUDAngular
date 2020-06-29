@@ -1,0 +1,102 @@
+<h1>{{modoEdicion ? 'Editar' : 'Agregar'}} Materia</h1>
+<form class="form-horizontal" novalidate
+      (ngSubmit)="save()" [formGroup]="formGroup">
+  <fieldset>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('nombre').touched || formGroup.get('nombre').dirty) && !formGroup.get('nombre').valid }">
+      <label class="col-md-2 control-label"
+             for="nombre">Nombre</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="nombre"
+               type="text"
+               required
+               formControlName="nombre" />
+        <span class="help-block" *ngIf="(formGroup.get('nombre').touched || formGroup.get('nombre').dirty) && formGroup.get('nombre').errors">
+          <span *ngIf="formGroup.get('nombre').errors.required" style="color:red">
+            El campo nombre es requerido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('profesor').touched || formGroup.get('profesor').dirty) && !formGroup.get('profesor').valid }">
+      <label class="col-md-2 control-label"
+             for="profesor">Profesor</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="profesor"
+               type="text"
+               required
+               formControlName="profesor" />
+        <span class="help-block" *ngIf="(formGroup.get('profesor').touched || formGroup.get('profesor').dirty) && formGroup.get('profesor').errors">
+          <span *ngIf="formGroup.get('profesor').errors.required" style="color:red">
+            El campo profesor es requerido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('fechaInicio').touched || formGroup.get('fechaInicio').dirty) && !formGroup.get('fechaInicio').valid }">
+      <label class="col-md-2 control-label"
+             for="fechaInicio">Fecha de Inicio</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="fechaInicio"
+               type="date"
+               required
+               formControlName="fechaInicio" />
+        <span class="help-block" *ngIf="(formGroup.get('fechaInicio').touched || formGroup.get('fechaInicio').dirty) && formGroup.get('fechaInicio').errors">
+          <span *ngIf="formGroup.get('fechaInicio').errors.required" style="color:red">
+            El campo Fecha de Inicio es requerido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('fechaFin').touched || formGroup.get('fechaFin').dirty) && !formGroup.get('fechaFin').valid }">
+      <label class="col-md-2 control-label"
+             for="fechaFin">Fecha de Finalización</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="fechaFin"
+               type="date"
+               required
+               formControlName="fechaFin" />
+        <span class="help-block" *ngIf="(formGroup.get('fechaFin').touched || formGroup.get('fechaFin').dirty) && formGroup.get('fechaFin').errors">
+          <span *ngIf="formGroup.get('fechaFin').errors.required" style="color:red">
+            El campo Fecha de Finalización es requerido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-2">
+        <span>
+          <button class="btn btn-success  btn-space"
+                  type="submit"
+                  [disabled]="!formGroup.valid">
+            Guardar
+          </button>
+          <button class="btn btn-danger  btn-space"
+                  type="button"
+                  [routerLink]='["/materias"]'>
+            Cancelar
+          </button>
+        </span>
+
+      </div>
+
+    </div>
+  </fieldset>
+</form>

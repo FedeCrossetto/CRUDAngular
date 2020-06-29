@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+code {
+  color: #e01a76;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.background-deg {
+  background: rgba(84,255,246,1);
+  background: -moz-linear-gradient(left, rgba(84,255,246,1) 0%, rgba(84,255,246,1) 14%, rgba(84,255,246,0.99) 33%, rgba(179,231,64,0.98) 63%, rgba(179,231,64,0.97) 86%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(84,255,246,1)), color-stop(14%, rgba(84,255,246,1)), color-stop(33%, rgba(84,255,246,0.99)), color-stop(63%, rgba(179,231,64,0.98)), color-stop(86%, rgba(179,231,64,0.97)));
+  background: -webkit-linear-gradient(left, rgba(84,255,246,1) 0%, rgba(84,255,246,1) 14%, rgba(84,255,246,0.99) 33%, rgba(179,231,64,0.98) 63%, rgba(179,231,64,0.97) 86%);
+  background: -o-linear-gradient(left, rgba(84,255,246,1) 0%, rgba(84,255,246,1) 14%, rgba(84,255,246,0.99) 33%, rgba(179,231,64,0.98) 63%, rgba(179,231,64,0.97) 86%);
+  background: -ms-linear-gradient(left, rgba(84,255,246,1) 0%, rgba(84,255,246,1) 14%, rgba(84,255,246,0.99) 33%, rgba(179,231,64,0.98) 63%, rgba(179,231,64,0.97) 86%);
+  background: linear-gradient(to right, rgba(84,255,246,1) 0%, rgba(84,255,246,1) 14%, rgba(84,255,246,0.99) 33%, rgba(179,231,64,0.98) 63%, rgba(179,231,64,0.97) 86%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54fff6', endColorstr='#b3e740', GradientType=1 );
+}

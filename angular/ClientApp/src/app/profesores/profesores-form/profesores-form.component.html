@@ -1,0 +1,80 @@
+<h1>{{modoEdicion ? 'Editar' : 'Agregar'}} Profesor</h1>
+<form class="form-horizontal" novalidate
+      (ngSubmit)="save()" [formGroup]="formGroup">
+  <fieldset>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('nombre').touched || formGroup.get('nombre').dirty) && !formGroup.get('nombre').valid }">
+      <label class="col-md-2 control-label"
+             for="nombreId">Nombre</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="nombreId"
+               type="text"
+               required
+               formControlName="nombre" />
+        <span class="help-block" *ngIf="(formGroup.get('nombre').touched || formGroup.get('nombre').dirty) && formGroup.get('nombre').errors">
+          <span *ngIf="formGroup.get('nombre').errors.required" style="color:red">
+            El campo nombre es requerido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('apellido').touched || formGroup.get('apellido').dirty) && !formGroup.get('apellido').valid }">
+      <label class="col-md-2 control-label"
+             for="apellidoId">Apellido</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="apellidoId"
+               type="text"
+               required
+               formControlName="apellido" />
+        <span class="help-block" *ngIf="(formGroup.get('apellido').touched || formGroup.get('apellido').dirty) && formGroup.get('apellido').errors">
+          <span *ngIf="formGroup.get('apellido').errors.required" style="color:red">
+            El campo apellido es requerido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('materias').touched || formGroup.get('materias').dirty) && !formGroup.get('materias').valid }">
+      <label class="col-md-2 control-label"
+             for="materiaId">Materia</label>
+      <div class="col-md-8">
+        <input class="form-control"
+               id="materiaId"
+               type="text"
+               required
+               formControlName="materias" />
+        <span class="help-block" *ngIf="(formGroup.get('materias').touched || formGroup.get('materias').dirty) && formGroup.get('materias').errors">
+          <span *ngIf="formGroup.get('materias').errors.required" style="color:red">
+            El campo materia es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-2">
+        <span>
+          <button class="btn btn-success  btn-space"
+                  type="submit"
+                  [disabled]="!formGroup.valid">
+            Guardar
+          </button>
+          <button class="btn btn-danger  btn-space"
+                  type="button"
+                  [routerLink]='["/profesores"]'>
+            Cancelar
+          </button>
+        </span>
+
+      </div>
+
+    </div>
+  </fieldset>
+</form>

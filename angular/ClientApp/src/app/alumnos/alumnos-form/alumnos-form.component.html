@@ -1,0 +1,120 @@
+<h1>{{modoEdicion ? 'Editar' : 'Agregar'}} Alumno</h1>
+<form class="form-horizontal" novalidate
+      (ngSubmit)="save()" [formGroup]="formGroup">
+  <fieldset>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('nombre').touched || formGroup.get('nombre').dirty) && !formGroup.get('nombre').valid }">
+      <label class="col-md-2 control-label"
+             for="nombreId">Nombre</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="nombreId"
+               type="text"
+               required
+               formControlName="nombre" />
+        <span class="help-block" *ngIf="(formGroup.get('nombre').touched || formGroup.get('nombre').dirty) && formGroup.get('nombre').errors">
+          <span *ngIf="formGroup.get('nombre').errors.required" style="color:red">
+            El campo nombre es requerido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('apellido').touched || formGroup.get('apellido').dirty) && !formGroup.get('apellido').valid }">
+      <label class="col-md-2 control-label"
+             for="apellidoId">Apellido</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="apellidoId"
+               type="text"
+               required
+               formControlName="apellido" />
+        <span class="help-block" *ngIf="(formGroup.get('apellido').touched || formGroup.get('apellido').dirty) && formGroup.get('apellido').errors">
+          <span *ngIf="formGroup.get('apellido').errors.required" style="color:red">
+            El campo apellido es requerido.
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('telefono').touched || formGroup.get('telefono').dirty) && !formGroup.get('telefono').valid }">
+      <label class="col-md-2 control-label"
+             for="telefonoId">Teléfono</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="telefonoId"
+               type="number"
+               required
+               formControlName="telefono" />
+        <span class="help-block" *ngIf="(formGroup.get('telefono').touched || formGroup.get('telefono').dirty) && formGroup.get('telefono').errors">
+          <span *ngIf="formGroup.get('telefono').errors.required" style="color:red">
+            El campo telefono es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('correo').touched || formGroup.get('correo').dirty) && !formGroup.get('correo').valid }">
+      <label class="col-md-2 control-label"
+             for="correoId">Correo</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="correoId"
+               type="text"
+               required
+               formControlName="correo" />
+        <span class="help-block" *ngIf="(formGroup.get('correo').touched || formGroup.get('correo').dirty) && formGroup.get('correo').errors">
+          <span *ngIf="formGroup.get('correo').errors.required" style="color:red">
+            El campo correo es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': (formGroup.get('fechaIngreso').touched || formGroup.get('fechaIngreso').dirty) && !formGroup.get('fechaIngreso').valid }">
+      <label class="col-md-2 control-label"
+             for="fechaIngreso">Fecha de Ingreso</label>
+
+      <div class="col-md-8">
+        <input class="form-control"
+               id="fechaIngreso"
+               type="date"
+               required
+               formControlName="fechaIngreso" />
+        <span class="help-block" *ngIf="(formGroup.get('fechaIngreso').touched || formGroup.get('fechaIngreso').dirty) && formGroup.get('fechaIngreso').errors">
+          <span *ngIf="formGroup.get('fechaIngreso').errors.required" style="color:red">
+            El campo Fecha de Ingreso es requerido
+          </span>
+        </span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-2">
+        <span>
+          <button class="btn btn-success btn-space"
+                  type="submit"
+                  [disabled]="!formGroup.valid">
+            Guardar
+          </button>
+          <button class="btn btn-danger btn-space"
+                  type="button"
+                  [routerLink]='["/alumnos"]'>
+            Cancelar
+          </button>
+        </span>
+
+      </div>
+
+    </div>
+  </fieldset>
+</form>
